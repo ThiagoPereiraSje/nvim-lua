@@ -8,4 +8,7 @@ return require('packer').startup(function()
 	-- file explorer
 	use 'kyazdani42/nvim-web-devicons'
 	use 'kyazdani42/nvim-tree.lua'
+
+	-- float term
+	use 'voldikss/vim-floaterm'
 end)

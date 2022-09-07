@@ -7,6 +7,7 @@ vim.o.wrap=false -- don't wrap long lines
 vim.o.expandtab=false
 vim.o.splitbelow=true -- automagically h split going down
 vim.o.splitright=true -- automagically v split going right
+vim.o.fileencoding='utf-8'
 
 -- Indentation
 vim.o.tabstop=2
@@ -26,3 +27,6 @@ vim.o.undodir='~/.nvim/undodir'  -- sets where undo files land
 vim.o.colorcolumn='100'  -- bar at 80 chars width
 vim.o.signcolumn='yes' -- always set the far left bar/column
 
+-- Float term
+vim.g.floaterm_width=0.95
+vim.g.floaterm_height=0.6
