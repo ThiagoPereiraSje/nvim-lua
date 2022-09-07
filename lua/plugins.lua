@@ -11,4 +11,8 @@ return require('packer').startup(function()
 
 	-- float term
 	use 'voldikss/vim-floaterm'
+
+	-- lsp
+	use 'williamboman/nvim-lsp-installer'
+	use 'neovim/nvim-lspconfig'
 end)
