@@ -26,5 +26,5 @@ vim.api.nvim_set_keymap('n', 'gr', ':lua vim.lsp.buf.references()<cr>', { norema
 vim.api.nvim_set_keymap('n', 'gt', ':lua vim.lsp.buf.type_definition()<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'K', ':lua vim.lsp.buf.hover()<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<c-k>', ':lua vim.lsp.buf.signature_help()<cr>', { noremap = true })
-vim.api.nvim_set_keymap('n', 'ca', ':lua vim.lsp.buf.code_action()<cr>', { noremap = true })
-vim.api.nvim_set_keymap('n', 'rn', ':lua vim.lsp.buf.rename()<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>rn', ':lua vim.lsp.buf.rename()<cr>', { noremap = true })
