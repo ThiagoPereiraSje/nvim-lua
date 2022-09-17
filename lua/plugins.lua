@@ -22,4 +22,5 @@ return require('packer').startup(function()
 	use 'hrsh7th/nvim-cmp'
 	use 'nvim-lua/lsp-status.nvim'
 	use 'tamago324/nlsp-settings.nvim'
+	use 'saadparwaiz1/cmp_luasnip'
 end)
