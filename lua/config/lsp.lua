@@ -13,6 +13,16 @@ lsp_win.default_opts = function(options)
 	return opts
 end
 
+-- lsp statusline config
+lsp_status.config({
+	current_function = false,
+	show_filename = false,
+	diagnostics = false,
+	status_symbol = '',
+	select_symbol = nil,
+	update_interval = 200,
+})
+
 lsp_installer.on_server_ready(function(server)
 	local opts = {}
 	server:setup(opts)
