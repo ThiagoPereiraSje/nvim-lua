@@ -24,4 +24,10 @@ return require('packer').startup(function()
 	use 'tamago324/nlsp-settings.nvim'
 	use 'L3MON4D3/LuaSnip'
 	use 'saadparwaiz1/cmp_luasnip'
+
+	-- treesitter
+	use 'nvim-treesitter/nvim-treesitter'
+
+	-- status line
+	use 'nvim-lualine/lualine.nvim'
 end)
