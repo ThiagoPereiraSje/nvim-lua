@@ -30,4 +30,8 @@ return require('packer').startup(function()
 
 	-- status line
 	use 'nvim-lualine/lualine.nvim'
+
+	-- telescope
+	use 'nvim-lua/plenary.nvim'
+	use 'nvim-telescope/telescope.nvim'
 end)
