@@ -1,11 +1,3 @@
-local lsp_status = require('lsp_status')
-
-
-local function lsp_progress()
-	return lsp_status.status()
-end
-
-
 local function extract_highlight_colors(color_group, scope)
 	if vim.fn.hlexists(color_group) == 0 then
 		return nil
@@ -76,3 +68,87 @@ local custom_thme = {
 		c = { bg = colors.background, fg = colors.gray },
 	},
 }
+
+local components = {
+	mode = {
+		function()
+			return ' '
+		end,
+		padding = { left = 0, right = 0},
+	},
+	filename = {
+		'filename',
+	},
+	diagnostics = {
+		'diagnostics',
+		sources = { 'nvim_diagnostic' },
+		symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+	},
+	treesitter = {
+		function()
+			local b = vim.api.nvim_get_current_buf()
+			if next(vim.treesitter.highlighter.active[b]) then
+				return ''
+			end
+			return ''
+		end,
+	},
+	location = {
+		'location'
+	},
+	progress = {
+		'progress'
+	},
+	encoding = {
+		'o:encoding',
+		fmt = string.upper,
+	},
+	filetype = {
+		'filetype'
+	},
+}
+
+require('lualine').setup({
+	options = {
+		theme = custom_theme,
+		icons_enabled = false,
+		component_separators = { left = '', right = '' },
+		section_separators = { left = '', right = '' },
+		disabled_filetypes = { 'dashboard', 'NvimTree', 'Outline' },
+	},
+	sections = {
+		lualine_a = { 'mode' },
+		lualine_b = {
+			'branch',
+			'filename',
+			'diff',
+		},
+		lualine_c = {},
+		lualine_x = {
+			components.diagnostics,
+		},
+		lualine_y = {
+			components.treesitter,
+		},
+		lualine_z = {},
+	},
+	inactive_sections = {
+		lualine_a = {},
+		lualine_b = {
+			'filename',
+		},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	},
+	tabline = {
+    lualine_a = {},
+		lualine_b = {	{ 'buffers' }	},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = { { 'tabs', mode = 0 } },
+		lualine_z = {},
+	},
+	extensions = { 'nvim-tree' },
+})
