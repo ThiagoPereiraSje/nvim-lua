@@ -34,4 +34,5 @@ return require('packer').startup(function()
 	-- telescope
 	use 'nvim-lua/plenary.nvim'
 	use 'nvim-telescope/telescope.nvim'
+	use 'folke/trouble.nvim'
 end)
