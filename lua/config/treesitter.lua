@@ -1,5 +1,6 @@
+-- install gcc and clang
 require('nvim-treesitter.configs').setup({
-	ensure_installed = { 'c', 'lua', 'rust' },
+	ensure_installed = { 'c', 'lua' },
 	sync_install = false,
 	highlight = {
 		enable = true,
